@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  border: 2px solid black;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.playground {
+  border: 2px solid black;
+  aspect-ratio: 1/1;
+  width: 500px;
+  height: 500px;
+  margin: 2em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.cells {
+  aspect-ratio: 1/1;
+  border: 2px solid black;
+  display: flex;
+  font-size: 5em;
+  align-items: center;
+  justify-content: center;
+}
+
+.cells:is(:hover, :active) {
+  background-color: #e5e5e5;
+}
