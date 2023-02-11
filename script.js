@@ -1,11 +1,7 @@
 const gameBoard = (() => {
   // const boardArr = ['', '', '', '', '', '', '', '', '']
 
-  let boardArr = [
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', ''],
-  ]
+  let boardArr = ['', '', '', '', '', '', '', '', '']
 
   function getBoardArr() {
     return boardArr
@@ -20,21 +16,17 @@ const playerInit = (name, choice) => {
     choice,
   }
 
-  // players.boxesMarked = [
-  //   ['', '', ''],
-  //   ['', '', ''],
-  //   ['', '', ''],
-  // ]
-  //
-  // function getBoxesMarked() {
-  //   return players.boxesMarked
-  // }
+  players.boxesMarked = []
+
+  function getBoxesMarked(value) {
+    players.boxesMarked.push(value)
+  }
 
   function getPlayers() {
     return players
   }
 
-  return { getPlayers }
+  return { getPlayers, getBoxesMarked }
 }
 
 const gameController = () => {
@@ -74,46 +66,40 @@ const gameController = () => {
   return { swapPlayers, getCurrPlayer }
 }
 
+const checkWin = () => {
+  const winCombi = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ]
+
+  function getwinCombi() {
+    return winCombi
+  }
+
+  return { getwinCombi }
+}
+
 const startGame = (() => {
   let selector = gameController()
   const markCell = document.querySelectorAll('.cells')
 
-  let checkWinner = (array, player) => {
-    for (let i = 0; i < 3; i++) {
+  function getWinByIndex(array, index, player) {
+    for (let i = 0; i < 8; i++) {
+      let j = 0
       if (
-        array[i][0] === player.choice &&
-        array[i][1] === player.choice &&
-        array[i][2] === player.choice
+        array[index[i][j]] === player.choice &&
+        array[index[i][(j += 1)]] === player.choice &&
+        array[index[i][(j += 1)]] === player.choice
       ) {
-        // alert(`winner is ${player.name}`)
+        j = 0
         return 1
       }
-    }
-    for (let j = 0; j < 3; j++) {
-      if (
-        array[0][j] === player.choice &&
-        array[1][j] === player.choice &&
-        array[2][j] === player.choice
-      ) {
-        // alert(`winner is ${player.name}`)
-        return 1
-      }
-    }
-    if (
-      array[0][0] === player.choice &&
-      array[1][1] === player.choice &&
-      array[2][2] === player.choice
-    ) {
-      // alert(`winner is ${player.name}`)
-      return 1
-    }
-    if (
-      array[0][2] === player.choice &&
-      array[1][1] === player.choice &&
-      array[2][0] === player.choice
-    ) {
-      // alert(`winner is ${player.name}`)
-      return 1
     }
   }
 
@@ -125,16 +111,17 @@ const startGame = (() => {
     let tg = e.target
     let currentPlayer = selector.getCurrPlayer()
     let board = gameBoard.getBoardArr()
+    let winIndex = checkWin().getwinCombi()
     if (tg.textContent === '') {
-      let row = tg.getAttribute('mindex')
-      let col = tg.getAttribute('nindex')
+      let index = tg.getAttribute('index')
       tg.textContent = currentPlayer.getPlayers().choice
-      board[row][col] = tg.textContent
+      board[index] = tg.textContent
+      // console.log(board)
+      currentPlayer.getBoxesMarked(tg.textContent)
       selector.swapPlayers()
-      if (checkWinner(board, currentPlayer.getPlayers()) === 1)
+      if (getWinByIndex(board, winIndex, currentPlayer.getPlayers()) === 1)
         alert(`${currentPlayer.getPlayers().name} wins`)
-      // console.log(checkWinner(board, currentPlayer.getPlayers()))
+      if (!board.includes('')) alert('tie')
     }
-    if (board.every((element) => element !== null)) alert("it's a tie")
   }
 })()

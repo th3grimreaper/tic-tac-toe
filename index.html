@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
-</head>
-
-<body>
-  <div class="container">
-    <form action="#" class="player-data">
-      <div class="input-container">
-        <label for="player-one">Player One</label>
-        <input type="text" id="player-one" name="pone-name" />
-      </div>
-      <div class="input-container">
-        <label for="player-two">Player Two</label>
-        <input type="text" id="player-two" name="ptwo-name" />
-      </div>
-      <div class="input-container">
-        <legend>Make a choice</legend>
-        <div class="choice-wrapper">
-          <input type="radio" id="x" name="choice" value="X" />
-          <label for="x">X</label>
+  <body>
+    <div class="container">
+      <form action="#" class="player-data">
+        <div class="input-container">
+          <label for="player-one">Player One</label>
+          <input type="text" id="player-one" name="pone-name" />
         </div>
-        <div class="choice-wrapper">
-          <input type="radio" id="o" name="choice" value="O" />
-          <label for="o">O</label>
+        <div class="input-container">
+          <label for="player-two">Player Two</label>
+          <input type="text" id="player-two" name="ptwo-name" />
         </div>
+        <div class="input-container">
+          <legend>Make a choice</legend>
+          <div class="choice-wrapper">
+            <input type="radio" id="x" name="choice" value="X" />
+            <label for="x">X</label>
+          </div>
+          <div class="choice-wrapper">
+            <input type="radio" id="o" name="choice" value="O" />
+            <label for="o">O</label>
+          </div>
+        </div>
+        <div class="submit">
+          <button class="submit-btn">Submit</button>
+        </div>
+      </form>
+      <div class="playground">
+        <div class="cells" index="0"></div>
+        <div class="cells" index="1"></div>
+        <div class="cells" index="2"></div>
+        <div class="cells" index="3"></div>
+        <div class="cells" index="4"></div>
+        <div class="cells" index="5"></div>
+        <div class="cells" index="6"></div>
+        <div class="cells" index="7"></div>
+        <div class="cells" index="8"></div>
       </div>
-      <div class="submit">
-        <button class="submit-btn">Submit</button>
-      </div>
-    </form>
-    <div class="playground">
-      <div class="cells" mindex="0" nindex="0"></div>
-      <div class="cells" mindex="0" nindex="1"></div>
-      <div class="cells" mindex="0" nindex="2"></div>
-      <div class="cells" mindex="1" nindex="0"></div>
-      <div class="cells" mindex="1" nindex="1"></div>
-      <div class="cells" mindex="1" nindex="2"></div>
-      <div class="cells" mindex="2" nindex="0"></div>
-      <div class="cells" mindex="2" nindex="1"></div>
-      <div class="cells" mindex="2" nindex="2"></div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
