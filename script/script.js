@@ -54,7 +54,18 @@ const gameController = () => {
   const button = document.querySelector('.submit-btn')
   let inputOne = document.querySelector('#player-one')
   let inputTwo = document.querySelector('#player-two')
+  let inputRadio = document.querySelector('#x')
   const form = document.querySelector('.player-data')
+
+  function checkValidity() {
+    if (
+      inputOne.reportValidity() === true &&
+      inputTwo.reportValidity() === true &&
+      inputRadio.reportValidity() === true
+    )
+      return true
+    else return false
+  }
 
   function saveData(e) {
     choice.forEach((val) => {
@@ -63,11 +74,13 @@ const gameController = () => {
       }
     })
     e.preventDefault()
-    playerOne = playerInit(inputOne.value, currChoice)
-    playerTwo = playerInit(inputTwo.value, currChoice === 'X' ? 'O' : 'X')
-    currentPlayer = playerOne
-    form.reset()
-    gameOpts.getModal().close()
+    if (checkValidity()) {
+      playerOne = playerInit(inputOne.value, currChoice)
+      playerTwo = playerInit(inputTwo.value, currChoice === 'X' ? 'O' : 'X')
+      currentPlayer = playerOne
+      form.reset()
+      gameOpts.getModal().close()
+    }
   }
 
   button.addEventListener('click', saveData)
