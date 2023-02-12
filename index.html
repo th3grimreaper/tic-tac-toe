@@ -11,30 +11,32 @@
 
   <body>
     <div class="container">
-      <form action="#" class="player-data">
-        <div class="input-container">
-          <label for="player-one">Player One</label>
-          <input type="text" id="player-one" name="pone-name" />
-        </div>
-        <div class="input-container">
-          <label for="player-two">Player Two</label>
-          <input type="text" id="player-two" name="ptwo-name" />
-        </div>
-        <div class="input-container">
-          <legend>Make a choice</legend>
-          <div class="choice-wrapper">
-            <input type="radio" id="x" name="choice" value="X" />
-            <label for="x">X</label>
+      <dialog class="modal">
+        <form action="#" class="player-data">
+          <div class="input-container">
+            <label for="player-one">Player One</label>
+            <input type="text" id="player-one" name="pone-name" />
           </div>
-          <div class="choice-wrapper">
-            <input type="radio" id="o" name="choice" value="O" />
-            <label for="o">O</label>
+          <div class="input-container">
+            <label for="player-two">Player Two</label>
+            <input type="text" id="player-two" name="ptwo-name" />
           </div>
-        </div>
-        <div class="submit">
-          <button class="submit-btn">Submit</button>
-        </div>
-      </form>
+          <div class="input-container">
+            <legend>Make a choice</legend>
+            <div class="choice-wrapper">
+              <input type="radio" id="x" name="choice" value="X" />
+              <label for="x">X</label>
+            </div>
+            <div class="choice-wrapper">
+              <input type="radio" id="o" name="choice" value="O" />
+              <label for="o">O</label>
+            </div>
+          </div>
+          <div class="submit">
+            <button class="submit-btn">Submit</button>
+          </div>
+        </form>
+      </dialog>
       <div class="playground">
         <div class="cells" index="0"></div>
         <div class="cells" index="1"></div>

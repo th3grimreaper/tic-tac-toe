@@ -29,6 +29,22 @@ const playerInit = (name, choice) => {
   return { getPlayers, getBoxesMarked }
 }
 
+const gameOpts = (() => {
+  let modal = document.querySelector('.modal')
+
+  function modalControl() {
+    modal.showModal()
+  }
+
+  window.addEventListener('load', modalControl)
+
+  function getModal() {
+    return modal
+  }
+
+  return { getModal }
+})()
+
 const gameController = () => {
   let playerOne = ''
   let playerTwo = ''
@@ -51,6 +67,7 @@ const gameController = () => {
     playerTwo = playerInit(inputTwo.value, currChoice === 'X' ? 'O' : 'X')
     currentPlayer = playerOne
     form.reset()
+    gameOpts.getModal().close()
   }
 
   button.addEventListener('click', saveData)
