@@ -1,4 +1,6 @@
+@use 'mixins';
 @use 'modal';
+@use 'buttons';
 
 * {
   box-sizing: border-box;

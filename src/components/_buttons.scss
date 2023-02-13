@@ -1,0 +1,6 @@
+@use 'mixins' as mixin;
+
+.submit-btn {
+  @include mixin.button-style(rebeccapurple, white, 1em);
+  padding: 0.75em 1.75em;
+}

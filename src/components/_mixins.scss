@@ -1,0 +1,13 @@
+@mixin button-style($bgcolor, $color, $fontsize) {
+  background-color: $bgcolor;
+  color: $color;
+  font-size: $fontsize;
+  border-radius: 10px;
+  border-style: none;
+}
+
+@mixin input-style($padding, $bradius) {
+  padding: $padding;
+  border-radius: $bradius;
+  border: 1px solid rgba(#000, 0.3);
+}

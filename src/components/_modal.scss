@@ -1,8 +1,11 @@
+@use 'mixins' as mixin;
+
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: clamp(250px, 30vw, 350px);
   padding: 2em;
   border-style: none;
   border-radius: 10px;
@@ -11,5 +14,26 @@
   &::backdrop {
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px);
+  }
+}
+
+.input-container {
+  display: flex;
+  font-size: 1.25em;
+  flex-direction: column;
+  margin-bottom: 1em;
+
+  label,
+  input[type='text'] {
+    width: 100%;
+    margin-top: 0.5em;
+  }
+
+  input[type='text'] {
+    @include mixin.input-style(0.5em, 5px);
+  }
+
+  .choice-wrapper {
+    margin-top: 0.5em;
   }
 }
