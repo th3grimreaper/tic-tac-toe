@@ -140,6 +140,7 @@ table {
   transform: translate(-50%, -50%);
   width: clamp(250px, 30vw, 350px);
   padding: 2em;
+  background-color: #fcddbc;
   border-style: none;
   border-radius: 10px;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
@@ -170,12 +171,22 @@ table {
 }
 
 .submit-btn {
-  background-color: rebeccapurple;
-  color: white;
+  background-color: #b8d8ba;
+  color: rgba(0, 0, 0, 0.8);
   font-size: 1em;
   border-radius: 10px;
   border-style: none;
+  width: 100%;
   padding: 0.75em 1.75em;
+  transition-property: background-color, transform;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+  transition: background-color, transform 250ms ease-in-out;
+}
+.submit-btn:is(:hover, :active) {
+  background-color: #7fb983;
+  color: rgba(0, 0, 0, 0.8);
+  transform: translateY(1px);
 }
 
 * {
@@ -235,6 +246,9 @@ body {
   .input-container .choice-wrapper label {
     margin-top: 0;
     margin-left: 0.5em;
+  }
+  .submit-btn {
+    width: auto;
   }
 }
 

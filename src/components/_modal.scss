@@ -1,4 +1,5 @@
 @use 'mixins' as mixin;
+@use 'colors';
 
 .modal {
   position: absolute;
@@ -7,6 +8,7 @@
   transform: translate(-50%, -50%);
   width: clamp(250px, 30vw, 350px);
   padding: 2em;
+  background-color: colors.$board-hover-color;
   border-style: none;
   border-radius: 10px;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
