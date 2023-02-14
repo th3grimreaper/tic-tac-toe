@@ -151,7 +151,11 @@ const startGame = (() => {
       selector.swapPlayers()
       if (getWinByIndex(board, winIndex, currentPlayer.getPlayers()) === 1)
         alert(`${currentPlayer.getPlayers().name} wins`)
-      if (!board.includes('')) alert("Nobody won. It's a draw.")
+      if (
+        !(getWinByIndex(board, winIndex, currentPlayer.getPlayers()) === 1) &&
+        !board.includes('')
+      )
+        alert("Nobody won. It's a draw.")
     }
   }
 })()
