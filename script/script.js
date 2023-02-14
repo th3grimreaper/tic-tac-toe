@@ -33,7 +33,7 @@ const gameOpts = (() => {
   let modal = document.querySelector('.modal')
 
   function modalControl() {
-    // modal.showModal()
+    modal.showModal()
   }
 
   window.addEventListener('load', modalControl)

@@ -1,6 +1,7 @@
 @use 'mixins';
 @use 'modal';
 @use 'buttons';
+@use 'colors';
 
 * {
   box-sizing: border-box;
@@ -13,7 +14,7 @@ body {
 }
 
 .container {
-  border: 2px solid black;
+  border: 2px solid colors.$pure-black;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,7 +24,7 @@ body {
 }
 
 .playground {
-  border: 2px solid black;
+  border: 2px solid colors.$pure-black;
   aspect-ratio: 1/1;
   width: clamp(300px, 50vw, 500px);
   margin: 2em;
@@ -34,13 +35,14 @@ body {
 
 .cells {
   aspect-ratio: 1/1;
-  border: 2px solid black;
+  border: 2px solid colors.$pure-black;
   display: flex;
-  font-size: 5em;
+  font-size: clamp(5em, 15vw, 8em);
   align-items: center;
   justify-content: center;
+  @include mixins.animation(background-color, 250ms, ease-in-out);
 }
 
 .cells:is(:hover, :active) {
-  background-color: #e5e5e5;
+  background-color: colors.$light-success-color;
 }

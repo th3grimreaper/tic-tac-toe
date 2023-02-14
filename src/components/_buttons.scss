@@ -5,7 +5,7 @@
   @include mixin.button-style(colors.$light-success-color, rgba(colors.$pure-black, 0.8), 1em);
   width: 100%;
   padding: 0.75em 1.75em;
-  @include mixin.button-animation(250ms, ease-in-out);
+  @include mixin.animation(all, 250ms, ease-in-out);
 
   &:is(:hover, :active) {
     background-color: colors.$success-color;

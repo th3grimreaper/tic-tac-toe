@@ -12,9 +12,6 @@
   border: 1px solid rgba(#000, 0.3);
 }
 
-@mixin button-animation($duration, $style) {
-  transition-property: background-color, transform;
-  transition-duration: $duration;
-  transition-timing-function: $style;
-  transition: background-color, transform $duration $style;
+@mixin animation($property, $duration, $style) {
+  transition: $property $duration $style;
 }
