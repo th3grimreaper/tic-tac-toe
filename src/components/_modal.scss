@@ -11,10 +11,10 @@
   background-color: colors.$board-hover-color;
   border-style: none;
   border-radius: 10px;
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 5px rgba(colors.$pure-black, 0.2);
 
   &::backdrop {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(colors.$pure-black, 0.5);
     backdrop-filter: blur(5px);
   }
 }

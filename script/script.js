@@ -33,7 +33,7 @@ const gameOpts = (() => {
   let modal = document.querySelector('.modal')
 
   function modalControl() {
-    modal.showModal()
+    // modal.showModal()
   }
 
   window.addEventListener('load', modalControl)
@@ -97,7 +97,7 @@ const gameController = () => {
 }
 
 const checkWin = () => {
-  const winCombi = [
+  const winCombo = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -108,11 +108,11 @@ const checkWin = () => {
     [2, 4, 6],
   ]
 
-  function getwinCombi() {
-    return winCombi
+  function getwinCombo() {
+    return winCombo
   }
 
-  return { getwinCombi }
+  return { getwinCombo }
 }
 
 const startGame = (() => {
@@ -141,12 +141,11 @@ const startGame = (() => {
     let tg = e.target
     let currentPlayer = selector.getCurrPlayer()
     let board = gameBoard.getBoardArr()
-    let winIndex = checkWin().getwinCombi()
+    let winIndex = checkWin().getwinCombo()
     if (tg.textContent === '') {
       let index = tg.getAttribute('index')
       tg.textContent = currentPlayer.getPlayers().choice
       board[index] = tg.textContent
-      // console.log(board)
       currentPlayer.getBoxesMarked(tg.textContent)
       selector.swapPlayers()
       if (getWinByIndex(board, winIndex, currentPlayer.getPlayers()) === 1)
