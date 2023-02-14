@@ -140,7 +140,7 @@ table {
   transform: translate(-50%, -50%);
   width: clamp(250px, 30vw, 350px);
   padding: 2em;
-  background-color: #fcddbc;
+  background-color: #d9dbbc;
   border-style: none;
   border-radius: 10px;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
@@ -171,7 +171,7 @@ table {
 }
 
 .submit-btn {
-  background-color: #b8d8ba;
+  background-color: #9ecaa1;
   color: rgba(0, 0, 0, 0.8);
   font-size: 1em;
   border-radius: 10px;
@@ -227,7 +227,7 @@ body {
 }
 
 .cells:is(:hover, :active) {
-  background-color: #b8d8ba;
+  background-color: #9ecaa1;
 }
 
 @media (min-width: 900px) {

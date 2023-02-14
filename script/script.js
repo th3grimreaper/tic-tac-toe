@@ -32,11 +32,11 @@ const playerInit = (name, choice) => {
 const gameOpts = (() => {
   let modal = document.querySelector('.modal')
 
-  function modalControl() {
+  function modalOpen() {
     modal.showModal()
   }
 
-  window.addEventListener('load', modalControl)
+  window.addEventListener('load', modalOpen)
 
   function getModal() {
     return modal
