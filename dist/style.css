@@ -133,7 +133,7 @@ table {
   border-spacing: 0;
 }
 
-.modal {
+.modal, .modal-end {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -145,9 +145,17 @@ table {
   border-radius: 10px;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
 }
-.modal::backdrop {
+.modal::backdrop, .modal-end::backdrop {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
+}
+
+.modal-end {
+  text-align: center;
+}
+.modal-end .show-result {
+  font-size: 1.25em;
+  margin-bottom: 2em;
 }
 
 .input-container {
@@ -170,7 +178,7 @@ table {
   margin-top: 0.5em;
 }
 
-.submit-btn {
+.submit-btn, .restart-btn {
   background-color: #9ecaa1;
   color: rgba(0, 0, 0, 0.8);
   font-size: 1em;
@@ -180,10 +188,21 @@ table {
   padding: 0.75em 1.75em;
   transition: all 250ms ease-in-out;
 }
-.submit-btn:is(:hover, :active) {
+.submit-btn:is(:hover, :active), .restart-btn:is(:hover, :active) {
   background-color: #7fb983;
   color: rgba(0, 0, 0, 0.8);
   transform: translateY(1px);
+}
+
+.restart-btn {
+  background-color: #8dc8d2;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 1em;
+  border-radius: 10px;
+  border-style: none;
+}
+.restart-btn:is(:hover, :active) {
+  background-color: #5eb1bf;
 }
 
 * {
@@ -244,9 +263,6 @@ body {
   .input-container .choice-wrapper label {
     margin-top: 0;
     margin-left: 0.5em;
-  }
-  .submit-btn {
-    width: auto;
   }
 }
 

@@ -93,7 +93,11 @@ const gameController = () => {
     currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne
   }
 
-  return { swapPlayers, getCurrPlayer }
+  function resetData() {
+    currentPlayer = ''
+  }
+
+  return { swapPlayers, getCurrPlayer, resetData }
 }
 
 const checkWin = () => {
@@ -114,6 +118,26 @@ const checkWin = () => {
 
   return { getwinCombo }
 }
+
+const endModal = (() => {
+  let modalEnd = document.querySelector('.modal-end')
+  let showResult = document.querySelector('.show-result')
+  let restartGame = document.querySelector('.restart-btn')
+
+  function getModalEnd() {
+    return modalEnd
+  }
+
+  function getResult() {
+    return showResult
+  }
+
+  function getRestartBtn() {
+    return restartGame
+  }
+
+  return { getModalEnd, getResult, getRestartBtn }
+})()
 
 const startGame = (() => {
   let selector = gameController()
@@ -148,13 +172,27 @@ const startGame = (() => {
       board[index] = tg.textContent
       currentPlayer.getBoxesMarked(tg.textContent)
       selector.swapPlayers()
-      if (getWinByIndex(board, winIndex, currentPlayer.getPlayers()) === 1)
-        alert(`${currentPlayer.getPlayers().name} wins`)
+      if (getWinByIndex(board, winIndex, currentPlayer.getPlayers()) === 1) {
+        endModal.getResult().textContent = `${currentPlayer.getPlayers().name} wins`
+        endModal.getModalEnd().showModal()
+      }
       if (
         !(getWinByIndex(board, winIndex, currentPlayer.getPlayers()) === 1) &&
         !board.includes('')
       )
-        alert("Nobody won. It's a draw.")
+        endModal.getResult().textContent = "Nobody won. It's a draw."
     }
   }
+
+  function resetGame() {
+    selector.resetData()
+    markCell.forEach((cell) => {
+      cell.textContent = ''
+    })
+    gameBoard.getBoardArr().fill('', 0)
+    endModal.getModalEnd().close()
+    gameOpts.getModal().showModal()
+  }
+
+  endModal.getRestartBtn().addEventListener('click', resetGame)
 })()

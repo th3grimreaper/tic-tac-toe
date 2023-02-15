@@ -13,3 +13,11 @@
     transform: translateY(1px);
   }
 }
+
+.restart-btn {
+  @extend .submit-btn;
+  @include mixin.button-style(colors.$light-restart-color, rgba(colors.$pure-black, 0.8), 1em);
+  &:is(:hover, :active) {
+    background-color: colors.$restart-color;
+  }
+}

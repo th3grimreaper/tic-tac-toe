@@ -19,6 +19,16 @@
   }
 }
 
+.modal-end {
+  @extend .modal;
+  text-align: center;
+
+  .show-result {
+    font-size: 1.25em;
+    margin-bottom: 2em;
+  }
+}
+
 .input-container {
   display: flex;
   font-size: 1.25em;
