@@ -179,8 +179,10 @@ const startGame = (() => {
       if (
         !(getWinByIndex(board, winIndex, currentPlayer.getPlayers()) === 1) &&
         !board.includes('')
-      )
+      ) {
         endModal.getResult().textContent = "Nobody won. It's a draw."
+        endModal.getModalEnd().showModal()
+      }
     }
   }
 
