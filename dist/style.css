@@ -253,7 +253,7 @@ body {
   background-color: rgba(84, 242, 242, 0.2);
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1000px) {
   .input-container {
     flex-direction: row;
   }

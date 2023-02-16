@@ -68,10 +68,6 @@ const gameController = () => {
     else return false
   }
 
-  function showPg() {
-    pg.style.display = 'grid'
-  }
-
   function getPlayground() {
     return pg
   }
@@ -89,7 +85,7 @@ const gameController = () => {
       currentPlayer = playerOne
       form.reset()
       gameOpts.getModal().close()
-      showPg()
+      getPlayground().style.display = 'grid'
     }
   }
 
