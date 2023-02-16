@@ -30,7 +30,7 @@ const playerInit = (name, choice) => {
 }
 
 const gameOpts = (() => {
-  let modal = document.querySelector('.modal')
+  const modal = document.querySelector('.modal')
 
   function modalOpen() {
     modal.showModal()
@@ -55,6 +55,7 @@ const gameController = () => {
   let inputOne = document.querySelector('#player-one')
   let inputTwo = document.querySelector('#player-two')
   let inputRadio = document.querySelector('#x')
+  let pg = document.querySelector('.playground')
   const form = document.querySelector('.player-data')
 
   function checkValidity() {
@@ -65,6 +66,14 @@ const gameController = () => {
     )
       return true
     else return false
+  }
+
+  function showPg() {
+    pg.style.display = 'grid'
+  }
+
+  function getPlayground() {
+    return pg
   }
 
   function saveData(e) {
@@ -80,6 +89,7 @@ const gameController = () => {
       currentPlayer = playerOne
       form.reset()
       gameOpts.getModal().close()
+      showPg()
     }
   }
 
@@ -97,7 +107,7 @@ const gameController = () => {
     currentPlayer = ''
   }
 
-  return { swapPlayers, getCurrPlayer, resetData }
+  return { swapPlayers, getCurrPlayer, resetData, getPlayground }
 }
 
 const checkWin = () => {
@@ -193,6 +203,7 @@ const startGame = (() => {
     })
     gameBoard.getBoardArr().fill('', 0)
     endModal.getModalEnd().close()
+    selector.getPlayground().style.display = 'none'
     gameOpts.getModal().showModal()
   }
 
