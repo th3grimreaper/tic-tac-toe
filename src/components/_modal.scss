@@ -9,6 +9,7 @@
   width: clamp(250px, 30vw, 350px);
   padding: 2em;
   background-color: colors.$board-hover-color;
+  color: rgba(colors.$dark-color, 0.8);
   border-style: none;
   border-radius: 10px;
   box-shadow: 4px 4px 5px rgba(colors.$pure-black, 0.2);
@@ -43,6 +44,7 @@
 
   input[type='text'] {
     @include mixin.input-style(0.5em, 5px);
+    color: rgba(colors.$dark-color, 0.8);
   }
 
   .choice-wrapper {

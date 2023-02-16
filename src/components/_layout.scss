@@ -14,9 +14,9 @@ body {
 }
 
 .container {
-  border: 2px solid colors.$pure-black;
   height: 100vh;
   display: flex;
+  background-color: colors.$dark-color;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -24,18 +24,20 @@ body {
 }
 
 .playground {
-  border: 2px solid colors.$pure-black;
+  border: 2px solid rgba(colors.$dark-color, 0.8);
   aspect-ratio: 1/1;
   width: clamp(300px, 50vw, 500px);
   margin: 2em;
   display: grid;
+  background-color: colors.$light-color;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
 }
 
 .cells {
   aspect-ratio: 1/1;
-  border: 2px solid colors.$pure-black;
+  border: 2px solid rgba(colors.$dark-color, 0.8);
+  color: rgba(colors.$dark-color, 0.8);
   display: flex;
   font-size: clamp(5em, 15vw, 8em);
   align-items: center;
