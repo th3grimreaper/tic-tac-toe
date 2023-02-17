@@ -44,7 +44,7 @@
 
   input[type='text'] {
     @include mixin.input-style(0.5em, 5px);
-    background-color: rgba(colors.$board-hover-color, 0.5);
+    background-color: rgba(colors.$board-hover-color, 0.3);
     color: rgba(colors.$dark-color, 0.8);
   }
 
