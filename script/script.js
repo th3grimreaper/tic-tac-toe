@@ -180,14 +180,18 @@ const startGame = (() => {
       selector.swapPlayers()
       if (getWinByIndex(board, winIndex, currentPlayer.getPlayers()) === 1) {
         endModal.getResult().textContent = `${currentPlayer.getPlayers().name} wins`
-        endModal.getModalEnd().showModal()
+        setTimeout(() => {
+          endModal.getModalEnd().showModal()
+        }, '300')
       }
       if (
         !(getWinByIndex(board, winIndex, currentPlayer.getPlayers()) === 1) &&
         !board.includes('')
       ) {
         endModal.getResult().textContent = "Nobody won. It's a draw."
-        endModal.getModalEnd().showModal()
+        setTimeout(() => {
+          endModal.getModalEnd().showModal()
+        }, '300')
       }
     }
   }
