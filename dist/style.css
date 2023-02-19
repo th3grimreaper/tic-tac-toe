@@ -140,8 +140,8 @@ table {
   transform: translate(-50%, -50%);
   width: clamp(250px, 30vw, 350px);
   padding: 2em;
-  background-color: #fcfcfc;
-  color: rgba(4, 42, 43, 0.8);
+  background-color: #042a2b;
+  color: rgba(252, 252, 252, 0.8);
   border-style: none;
   border-radius: 10px;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
@@ -175,7 +175,7 @@ table {
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   background-color: rgba(121, 128, 134, 0.3);
-  color: rgba(4, 42, 43, 0.8);
+  color: rgba(252, 252, 252, 0.8);
 }
 .input-container .choice-wrapper {
   margin-top: 0.5em;
