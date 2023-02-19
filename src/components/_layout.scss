@@ -47,4 +47,5 @@ body {
 
 .cells:is(:hover, :active) {
   background-color: rgba(colors.$floure-cyan, 0.2);
+  cursor: pointer;
 }

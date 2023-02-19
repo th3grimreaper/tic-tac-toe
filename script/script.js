@@ -191,7 +191,7 @@ const startGame = (() => {
         endModal.getResult().textContent = "Nobody won. It's a draw."
         setTimeout(() => {
           endModal.getModalEnd().showModal()
-        }, '300')
+        }, '200')
       }
     }
   }
