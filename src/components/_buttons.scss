@@ -4,6 +4,7 @@
 .submit-btn {
   @include mixin.button-style(colors.$light-success-color, rgba(colors.$dark-color, 0.8), 1em);
   width: 100%;
+  color: rgba(colors.$dark-color, 0.8);
   padding: 0.75em 1.75em;
   @include mixin.animation(all, 250ms, ease-in-out);
 
@@ -16,6 +17,8 @@
 .restart-btn {
   @extend .submit-btn;
   @include mixin.button-style(colors.$light-restart-color, rgba(colors.$dark-color, 0.8), 1em);
+  width: auto;
+  padding: 1em;
   &:is(:hover, :active) {
     background-color: colors.$restart-color;
   }

@@ -2,9 +2,12 @@
   .input-container {
     flex-direction: row;
 
+    .radio-heading,
+    .choice-wrapper {
+      margin-top: 0.5em;
+    }
     .choice-wrapper {
       display: flex;
-      margin-top: 0;
       margin-left: auto;
       justify-content: space-around;
 
@@ -14,5 +17,9 @@
         margin-left: 0.5em;
       }
     }
+  }
+
+  .submit-btn {
+    margin-top: 0.5em;
   }
 }
