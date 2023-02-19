@@ -226,7 +226,7 @@ body {
 .container {
   height: 100vh;
   display: flex;
-  background-color: #fcfcfc;
+  background-color: #042a2b;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -234,20 +234,20 @@ body {
 }
 
 .playground {
-  border: 2px solid #fcfcfc;
   aspect-ratio: 1/1;
   width: clamp(300px, 50vw, 500px);
   margin: 2em;
   display: none;
-  background-color: #042a2b;
+  background-color: rgba(252, 252, 252, 0.8);
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  grid-gap: 5px;
 }
 
 .cells {
   aspect-ratio: 1/1;
-  border: 2px solid #fcfcfc;
-  color: #fcfcfc;
+  background-color: #042a2b;
+  color: rgba(252, 252, 252, 0.8);
   display: flex;
   font-size: clamp(5em, 15vw, 8em);
   align-items: center;
@@ -256,7 +256,7 @@ body {
 }
 
 .cells:is(:hover, :active) {
-  background-color: rgba(84, 242, 242, 0.2);
+  background-color: rgba(4, 42, 43, 0.9);
   cursor: pointer;
 }
 

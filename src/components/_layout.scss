@@ -16,7 +16,7 @@ body {
 .container {
   height: 100vh;
   display: flex;
-  background-color: colors.$light-color;
+  background-color: colors.$dark-color;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -24,20 +24,20 @@ body {
 }
 
 .playground {
-  border: 2px solid colors.$light-color;
   aspect-ratio: 1/1;
   width: clamp(300px, 50vw, 500px);
   margin: 2em;
   display: none;
-  background-color: colors.$dark-color;
+  background-color: rgba(colors.$light-color, 0.8);
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  grid-gap: 5px;
 }
 
 .cells {
   aspect-ratio: 1/1;
-  border: 2px solid colors.$light-color;
-  color: colors.$light-color;
+  background-color: colors.$dark-color;
+  color: rgba(colors.$light-color, 0.8);
   display: flex;
   font-size: clamp(5em, 15vw, 8em);
   align-items: center;
@@ -46,6 +46,6 @@ body {
 }
 
 .cells:is(:hover, :active) {
-  background-color: rgba(colors.$floure-cyan, 0.2);
+  background-color: rgba(colors.$dark-color, 0.9);
   cursor: pointer;
 }
