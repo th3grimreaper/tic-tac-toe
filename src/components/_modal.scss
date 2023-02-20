@@ -54,4 +54,8 @@
   .choice-wrapper {
     margin-top: 0.5em;
   }
+
+  input[type='radio'] {
+    accent-color: colors.$success-color;
+  }
 }

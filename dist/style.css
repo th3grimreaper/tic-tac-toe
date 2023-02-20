@@ -182,6 +182,9 @@ table {
 .input-container .choice-wrapper {
   margin-top: 0.5em;
 }
+.input-container input[type=radio] {
+  accent-color: #7fb983;
+}
 
 .submit-btn {
   background-color: #9ecaa1;
