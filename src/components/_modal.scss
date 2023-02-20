@@ -16,13 +16,16 @@
 
   &::backdrop {
     background: rgba(colors.$pure-black, 0.5);
-    backdrop-filter: blur(5px);
+    // backdrop-filter: blur(5px);
   }
 }
 
 .modal-end {
   @extend .modal;
   text-align: center;
+  &::backdrop {
+    backdrop-filter: blur(5px);
+  }
 
   .show-result {
     font-size: 1.25em;

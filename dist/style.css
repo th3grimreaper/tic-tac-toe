@@ -148,11 +148,13 @@ table {
 }
 .modal::backdrop, .modal-end::backdrop {
   background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
 }
 
 .modal-end {
   text-align: center;
+}
+.modal-end::backdrop {
+  backdrop-filter: blur(5px);
 }
 .modal-end .show-result {
   font-size: 1.25em;
@@ -228,7 +230,7 @@ body {
   display: flex;
   background-color: #042a2b;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: relative;
 }
@@ -268,7 +270,7 @@ body {
 .header-text {
   font-size: clamp(2em, 5vw, 3em);
   font-weight: 700;
-  padding: 0.25em;
+  padding: 1rem;
 }
 
 .footer-text {
