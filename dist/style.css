@@ -224,7 +224,7 @@ body {
 }
 
 .container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   background-color: #042a2b;
   flex-direction: column;
@@ -235,7 +235,7 @@ body {
 
 .playground {
   aspect-ratio: 1/1;
-  width: clamp(300px, 50vw, 500px);
+  width: clamp(300px, 50vw, 450px);
   margin: 2em;
   display: none;
   background-color: rgba(252, 252, 252, 0.8);
@@ -258,6 +258,22 @@ body {
 .cells:is(:hover, :active) {
   background-color: rgba(4, 42, 43, 0.9);
   cursor: pointer;
+}
+
+.header,
+.footer {
+  color: rgba(252, 252, 252, 0.8);
+}
+
+.header-text {
+  font-size: clamp(2em, 5vw, 3em);
+  font-weight: 700;
+  padding: 0.25em;
+}
+
+.footer-text {
+  font-size: 14px;
+  padding-bottom: 1em;
 }
 
 @media (min-width: 1000px) {
