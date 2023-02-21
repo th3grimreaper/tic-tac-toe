@@ -273,7 +273,7 @@ body {
 .header-text {
   font-size: clamp(2em, 5vw, 3em);
   font-weight: 700;
-  padding: 1rem;
+  padding-top: 3rem;
 }
 
 .footer-text {
