@@ -182,8 +182,22 @@ table {
 .input-container .choice-wrapper {
   margin-top: 0.5em;
 }
-.input-container input[type=radio] {
+.input-container input:is([type=radio], [type=checkbox]) {
   accent-color: #7fb983;
+}
+
+.input-container.check {
+  flex-direction: row;
+  justify-content: center;
+}
+.input-container.check label,
+.input-container.check div {
+  width: 100%;
+  margin-top: 0;
+}
+.input-container.check div {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .submit-btn {

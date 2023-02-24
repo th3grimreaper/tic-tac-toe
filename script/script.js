@@ -73,12 +73,12 @@ const gameController = () => {
     return Math.floor(Math.random() * array.length);
   }
 
-  function playVsComp(playerOne, box) {
-    const currentPlayer = playerOne;
+  function playVsComp(player, box) {
+    currentPlayer = player;
     const playerTwo = 'Computer';
     const playerTwoIndex = compPlayer();
     if (box === '') {
-      box.textContent = curr.choice;
+      box.textContent = currentPlayer.choice;
       swapPlayers();
     }
   }
