@@ -45,6 +45,10 @@
     margin-top: 0.5em;
   }
 
+  input[type='text']:disabled {
+    display: none;
+  }
+
   input[type='text'] {
     @include mixin.input-style(0.5em, 5px);
     background-color: rgba(colors.$board-hover-color, 0.3);
