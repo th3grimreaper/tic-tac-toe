@@ -64,14 +64,8 @@
   flex-direction: row;
   justify-content: center;
 
-  label,
-  div {
-    width: 100%;
-    margin-top: 0;
-  }
-
-  div {
-    display: flex;
-    justify-content: flex-start;
+  input {
+    margin-top: 0.8em;
+    margin-right: 1em;
   }
 }

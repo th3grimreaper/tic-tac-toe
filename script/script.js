@@ -59,8 +59,8 @@ const gameController = () => {
   function checkValidity() {
     if (
       inputOne.reportValidity() === true
-            && inputTwo.reportValidity() === true
-            && inputRadio.reportValidity() === true
+      && inputTwo.reportValidity() === true
+      && inputRadio.reportValidity() === true
     ) { return true; }
     return false;
   }
