@@ -73,16 +73,6 @@ const gameController = () => {
     return Math.floor(Math.random() * array.length);
   }
 
-  function playVsComp(player, box) {
-    currentPlayer = player;
-    const playerTwo = 'Computer';
-    const playerTwoIndex = compPlayer();
-    if (box === '') {
-      box.textContent = currentPlayer.choice;
-      swapPlayers();
-    }
-  }
-
   function saveData(e) {
     choice.forEach((val) => {
       if (val.checked === true) {
@@ -105,6 +95,10 @@ const gameController = () => {
 
   button.addEventListener('click', saveData);
 
+  function getSecondInput() {
+    return inputTwo;
+  }
+
   function getCurrPlayer() {
     return currentPlayer;
   }
@@ -118,7 +112,7 @@ const gameController = () => {
   }
 
   return {
-    swapPlayers, getCurrPlayer, resetData, getPlayground,
+    swapPlayers, getCurrPlayer, resetData, getPlayground, getSecondInput,
   };
 };
 
@@ -164,14 +158,25 @@ const endModal = (() => {
 const startGame = (() => {
   const selector = gameController();
   const markCell = document.querySelectorAll('.cells');
+  const computer = document.querySelector('#computer');
+
+  function selectComputer(e) {
+    if (e.target.checked) {
+      selector.getSecondInput().style.display = 'none';
+    } else {
+      selector.getSecondInput().style.display = 'block';
+    }
+  }
+
+  computer.addEventListener('input', selectComputer);
 
   function getWinByIndex(array, index, player) {
     for (let i = 0; i < 8; i += 1) {
       let j = 0;
       if (
         array[index[i][j]] === player.choice
-                && array[index[i][(j += 1)]] === player.choice
-                && array[index[i][(j += 1)]] === player.choice
+        && array[index[i][j + 1]] === player.choice
+        && array[index[i][j + 2]] === player.choice
       ) {
         j = 0;
         return 1;

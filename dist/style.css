@@ -194,8 +194,7 @@ table {
   justify-content: center;
 }
 .input-container.check input {
-  margin-top: 0.8em;
-  margin-right: 1em;
+  margin: 1em 1em 1em 0;
 }
 
 .submit-btn {
