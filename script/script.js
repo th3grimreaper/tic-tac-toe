@@ -52,6 +52,7 @@ const gameController = () => {
   const button = document.querySelector('.submit-btn');
   const inputOne = document.querySelector('#player-one');
   const inputTwo = document.querySelector('#player-two');
+  const computer = document.querySelector('#computer');
   const inputRadio = document.querySelector('#x');
   const pg = document.querySelector('.playground');
   const form = document.querySelector('.player-data');
@@ -59,7 +60,7 @@ const gameController = () => {
   function checkValidity() {
     if (
       inputOne.reportValidity() === true
-      && inputTwo.reportValidity() === true
+      // && inputTwo.reportValidity() === true
       && inputRadio.reportValidity() === true
     ) { return true; }
     return false;
@@ -67,10 +68,6 @@ const gameController = () => {
 
   function getPlayground() {
     return pg;
-  }
-
-  function compPlayer(array) {
-    return Math.floor(Math.random() * array.length);
   }
 
   function saveData(e) {
@@ -83,7 +80,7 @@ const gameController = () => {
     if (checkValidity()) {
       playerOne = playerInit(inputOne.value, currChoice);
       playerTwo = playerInit(
-        inputTwo.value,
+        computer.checked ? 'Computer' : inputTwo.value,
         currChoice === 'X' ? 'O' : 'X',
       );
       currentPlayer = playerOne;
@@ -99,6 +96,10 @@ const gameController = () => {
     return inputTwo;
   }
 
+  function getComputer() {
+    return computer;
+  }
+
   function getCurrPlayer() {
     return currentPlayer;
   }
@@ -112,7 +113,7 @@ const gameController = () => {
   }
 
   return {
-    swapPlayers, getCurrPlayer, resetData, getPlayground, getSecondInput,
+    swapPlayers, getCurrPlayer, resetData, getPlayground, getSecondInput, getComputer,
   };
 };
 
@@ -158,7 +159,6 @@ const endModal = (() => {
 const startGame = (() => {
   const selector = gameController();
   const markCell = document.querySelectorAll('.cells');
-  const computer = document.querySelector('#computer');
 
   function selectComputer(e) {
     if (e.target.checked) {
@@ -168,7 +168,11 @@ const startGame = (() => {
     }
   }
 
-  computer.addEventListener('input', selectComputer);
+  selector.getComputer().addEventListener('input', selectComputer);
+
+  function compPlayer(array) {
+    return Math.floor(Math.random() * array.length);
+  }
 
   function getWinByIndex(array, index, player) {
     for (let i = 0; i < 8; i += 1) {
@@ -225,6 +229,7 @@ const startGame = (() => {
 
   function resetGame() {
     selector.resetData();
+    selector.getSecondInput().style.display = 'block';
     markCell.forEach((cell) => {
       cell.textContent = '';
     });
