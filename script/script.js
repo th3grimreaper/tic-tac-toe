@@ -152,8 +152,8 @@ const startGame = (() => {
       let j = 0
       if (
         array[index[i][j]] === player.choice &&
-        array[index[i][(j += 1)]] === player.choice &&
-        array[index[i][(j += 1)]] === player.choice
+        array[index[i][j + 1]] === player.choice &&
+        array[index[i][j + 2]] === player.choice
       ) {
         j = 0
         return 1
